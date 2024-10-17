@@ -1,6 +1,6 @@
 # activate the virtual environment using "source .venv/bin/activate"
 # to deactivate use command "deactivate"
-# IF YOU INSTALL NEW PACKAGES ACTIVATE THE ENV AGAIN
+# if coding in the backend, please install the packages first using pip install -r requirements.txt
 
 # after installing dependencies, use this command: pip freeze > requirements.txt
 from fastapi import FastAPI

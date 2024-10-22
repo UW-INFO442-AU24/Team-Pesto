@@ -10,7 +10,7 @@
 
 <p align=“center”> An application designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources. <br /> <a href=“https://github.com/UW-INFO442-AU24/Team-Pesto”><strong>Explore the docs »</strong></a> <br />
 
-<!-- TABLE OF CONTENTS --> <details> <summary>Table of Contents</summary> <ol> <li> <a href=“#about-the-project”>About The Project</a> <ul> <li><a href=“#built-with”>Built With</a></li> </ul> </li> <li> <a href=“#getting-started”>Getting Started</a> <ul> <li><a href=“#prerequisites”>Prerequisites</a></li> <li><a href=“#installation”>Installation</a></li> </ul> </li> <li><a href=“#usage”>Usage</a></li> <li><a href=“#roadmap”>Roadmap</a></li> <li><a href=“#contributing”>Contributing</a></li> <li><a href=“#license”>License</a></li> <li><a href=“#contact”>Contact</a></li> <li><a href=“#acknowledgments”>Acknowledgments</a></li> </ol> </details>
+<!-- TABLE OF CONTENTS --> <details> <summary>Table of Contents</summary> <ol> <li> <a href=“#about-the-project”>About The Project</a> <ul> <li><a href=“#built-with”>Built With</a></li> </ul> </li> <li> <a href=“#getting-started”>Getting Started</a> <ul> <li><a href=“#prerequisites”>Prerequisites</a></li> <li><a href=“#installation”>Installation</a></li> </ul> <li><a href=“#roadmap”>Roadmap</a></li> <li><a href=“#contact”>Contact</a></li> </ol> </details>
 
 <!-- ABOUT THE PROJECT -->
 
@@ -152,6 +152,17 @@ We also understand that there are some resources that provide similar services, 
 -   [ ] Education about postpartum depression
 -   [ ] Resource to find a therapist/online therapy support
 -   [ ] Data visualization tools (e.g., graphs, charts)
+
+<!-- CONTACT -->
+## Contact
+
+<p>Joey Kang - <a href="https://www.linkedin.com/in/joey--kang/">LinkedIn</a> - <a href= "mailto: joeykang@uw.edu"> joeykang@uw.edu </a></p>
+<p>Katie Shi - </p>
+<p>Safa Jamal - </p>
+<p>Mynah Shetty - </p>
+<p>Mira Nair - </p>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/UW-INFO442-AU24/Team-Pesto?style=for-the-badge&color=rgb(68%2C%20204%2C%2017)

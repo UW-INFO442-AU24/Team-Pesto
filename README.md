@@ -38,7 +38,7 @@ We also understand that there are some resources that provide similar services, 
 
 ### Built With
 
--   [![React][React.js]][https://react.dev/]
+* [![React][React.js]][React-url]
 -   [![FastAPI][FastAPI]][FastAPI-url]
 -   [![Firebase][Firebase]][Firebase-url]
 -   [![Azure][Azure]][Azure-url]

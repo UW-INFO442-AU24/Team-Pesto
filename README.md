@@ -14,8 +14,31 @@
 
 <p align=“center”> An application designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources. <br />
 
-<!-- fix this -->
-<!-- TABLE OF CONTENTS --> <details> <summary>Table of Contents</summary> <ol> <li> <a href=“#about-the-project”>About The Project</a> <ul> <li><a href=“#built-with”>Built With</a></li> </ul> </li> <li> <a href=“#getting-started”>Getting Started</a> <ul> <li><a href=“#prerequisites”>Prerequisites</a></li> <li><a href=“#installation”>Installation</a></li> </ul> <li><a href=“#roadmap”>Roadmap</a></li> <li><a href=“#contact”>Contact</a></li> </ol> </details>
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+            <ul>
+                <li><a href="#frontend">Frontend</a></li>
+                <li><a href="#backend">Backend</a></li>
+            </ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
 <!-- ABOUT THE PROJECT -->
 

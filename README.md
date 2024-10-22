@@ -4,15 +4,19 @@
 [![commits][commits-shield]][commits-url]
 
 <!-- PROJECT LOGO --> 
-<br /> 
-    <div align=“center”> 
-    <a href=“https://github.com/UW-INFO442-AU24/Team-Pesto”> 
-        <img src="images/logo.jpg" alt=“Logo” width=“40” height=“40”>
-    </a>
+<br />
+<div align="center">
+  <a href=“https://github.com/UW-INFO442-AU24/Team-Pesto”> 
+    <img src="images/logo.jpg" alt="Logo" width="100" height="100">
+  </a>
 
-<h3 align=“center”>Postpartum Depression Support App</h3>
+  <h3 align="center">hera</h3>
 
-<p align=“center”> An application designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources. <br />
+  <p align="center">
+    An application designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources.
+    <br />
+  </p>
+</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -185,10 +189,10 @@ We also understand that there are some resources that provide similar services, 
 ## Contact
 
 <p>Joey Kang - <a href="https://www.linkedin.com/in/joey--kang/">LinkedIn</a> - <a href= "mailto: joeykang@uw.edu"> joeykang@uw.edu </a></p>
-<p>Katie Shi - </p>
-<p>Safa Jamal - </p>
-<p>Mynah Shetty - </p>
-<p>Mira Nair - </p>
+<p>Katie Shi - <a href="https://www.linkedin.com/in/katie-shi-ab4973185/">LinkedIn</a> - <a href= "mailto: katieshi@uw.edu"> katieshi@uw.edu </a></p>
+<p>Safa Jamal - <a href="https://www.linkedin.com/in/safa-jamal/">LinkedIn</a> - <a href= "mailto: safaj03@uw.edu"> safaj03@uw.edu </a></p>
+<p>Mynah Shetty - <a href="https://www.linkedin.com/in/mynahshetty/">LinkedIn</a> - <a href= "mailto: mshett@uw.edu"> mshett@uw.edu </a></p>
+<p>Mira Nair - <a href="https://www.linkedin.com/in/miranair/">LinkedIn</a> - <a href= "mailto: miranair@uw.edu"> miranair@uw.edu </a></p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

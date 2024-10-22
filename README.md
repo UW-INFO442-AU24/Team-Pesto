@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href=“https://github.com/UW-INFO442-AU24/Team-Pesto”> 
-    <img src="images/logo.jpg" alt="Logo" width="100" height="100">
+    <img src="images/hera_logo.png" alt="hera logo with purple and pinnk petals" width="100" height="100">
   </a>
 
   <h1 align="center">hera</h1>

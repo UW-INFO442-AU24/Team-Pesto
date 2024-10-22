@@ -7,7 +7,7 @@
 <br /> 
     <div align=“center”> 
     <a href=“https://github.com/UW-INFO442-AU24/Team-Pesto”> 
-        <img src=“images/logo.jpg alt=“Logo” width=“80” height=“80”>
+        <img src="images/logo.jpg" alt=“Logo” width=“40” height=“40”>
     </a>
 
 <h3 align=“center”>Postpartum Depression Support App</h3>

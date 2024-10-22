@@ -1,3 +1,9 @@
+<!-- PROJECT SHIELDS -->
+[![contributors][contributors-shield]][contributors-url]
+[![issues][issues-shield]][issues-url]
+[![commits][commits-shield]][commits-url]
+
+
 <!-- PROJECT LOGO --> <br /> <div align=“center”> <a href=“https://github.com/github_username/repo_name”> <img src=“images/logo.png” alt=“Logo” width=“80” height=“80”> </a>
 
 <h3 align=“center”>Postpartum Depression Support App</h3>
@@ -10,7 +16,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](www.example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](www.example.com) -->
 
 This application is designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources.
 
@@ -39,9 +45,12 @@ We also understand that there are some resources that provide similar services, 
 ### Built With
 
 * [![React][React.js]][React-url]
+* [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+* [![Python][Python]][Python-url]
+* [![SQLAlchemy][SQLAlchemy]][SQLAlchemy-url]
 * [![FastAPI][FastAPI]][FastAPI-url]
+* [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
 * [![Firebase][Firebase]][Firebase-url]
-* [![Azure][Azure]][Azure-url]
 
 <p align=“right”>(<a href=“#readme-top”>back to top</a>)</p>
 
@@ -49,62 +58,83 @@ We also understand that there are some resources that provide similar services, 
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
+ To get a local copy up and running follow these steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-
--   npm
-    
-    ```sh
-    npm install npm@latest -g
-    
-    ```
-    
+-   Python 3.12+
+-   Node.js 20+
+-   npm 10+
+-   Azure account (for Cosmos DB or whichever db we use)
 
 ### Installation
 
-1.  Get a free API Key at [https://example.com](https://example.com/)
-2.  Clone the repo
+#### Frontend
+1.  Install Node.js and npm
     
     ```sh
-    git clone https://github.com/github_username/repo_name.git
-    
+    # install nvm (Node Version Manager)
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh
+
+    # download and install Node.js and npm
+    nvm install 20
     ```
     
-3.  Install NPM packages
+2.  Navigate to the frontend directory
+    
+    ```sh
+    cd frontend
+    ```
+
+3.  Install frontend dependencies
     
     ```sh
     npm install
-    
     ```
-    
-4.  Enter your API in `config.js`
-    
-    ```js
-    const API_KEY = 'ENTER YOUR API';
-    
-    ```
-    
-5.  Change git remote url to avoid accidental pushes to base project
+
+4.  Start the React development server
     
     ```sh
-    git remote set-url origin github_username/repo_name
-    git remote -v # confirm the changes
+    npm start
+    ```
+
+#### Backend
+1.  Clone the repo
     
+    ```sh
+    git clone https://github.com/UW-INFO442-AU24/Team-Pesto.git
     ```
     
+2.  Create and activate a virtual environment
+    
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+    
+3.  Install backend dependencies
+    
+    ```sh
+    pip install -r requirements.txt
+    ```
+    
+4.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL:
+    
+    ```sh
+    DATABASE_URL="azure-cosmos-db-url"
+    ```
 
-<p align=“right”>(<a href=“#readme-top”>back to top</a>)</p>
+5.  Run database migrations:
+    
+    ```py
+    python -c "from app.database import Base, engine; Base.metadata.create_all(bind=engine)"
+    ```
 
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://bing.com/search?q=)_
+5.  Start the FastAPI server:
+    
+    ```sh
+    uvicorn app.main:app --reload
+    ```
+    
 
 <p align=“right”>(<a href=“#readme-top”>back to top</a>)</p>
 
@@ -122,3 +152,25 @@ _For more examples, please refer to the [Documentation](https://bing.com/search?
 -   [ ] Education about postpartum depression
 -   [ ] Resource to find a therapist/online therapy support
 -   [ ] Data visualization tools (e.g., graphs, charts)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[contributors-shield]: https://img.shields.io/github/contributors/UW-INFO442-AU24/Team-Pesto?style=for-the-badge&color=rgb(68%2C%20204%2C%2017)
+[contributors-url]: https://github.com/UW-INFO442-AU24/Team-Pesto/graphs/contributors
+[commits-shield]: https://img.shields.io/github/commit-activity/t/UW-INFO442-AU24/Team-Pesto?style=for-the-badge
+[commits-url]: https://github.com/UW-INFO442-AU24/Team-Pesto/commits/main/
+[issues-shield]: https://img.shields.io/github/issues/UW-INFO442-AU24/Team-Pesto?style=for-the-badge
+[issues-url]: https://github.com/UW-INFO442-AU24/Team-Pesto/issues
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+[Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
+[Python-url]: https://www.python.org/
+[FastAPI]: https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi
+[FastAPI-url]: https://fastapi.tiangolo.com/
+[Firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
+[Firebase-url]: https://firebase.google.com/
+[PostgreSQL]: https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white
+[PostgreSQL-url]: https://www.postgresql.org/
+[SQLAlchemy]: https://img.shields.io/badge/SQLAlchemy-F9DC3E?style=for-the-badge&logo=sqlalchemy&logoColor=black
+[SQLAlchemy-url]: https://www.sqlalchemy.org/
+[TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-grey?style=for-the-badge&logo=tailwind-css&logoColor=38B2AC
+[TailwindCSS-url]: https://tailwindcss.com/

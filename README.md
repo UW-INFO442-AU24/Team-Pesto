@@ -10,7 +10,7 @@
     <img src="images/logo.jpg" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">hera</h3>
+  <h1 align="center">hera</h1>
 
   <p align="center">
     An application designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources.

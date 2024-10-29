@@ -1,6 +1,6 @@
 import React from 'react'
-import Login from './compnents/login_form.jsx'
-import Signup from './compnents/signup_form.jsx'
+import Login from './components/login_form'
+import Signup from './components/signup_form'
 
 const App = () => {
   return (

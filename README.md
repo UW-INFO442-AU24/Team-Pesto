@@ -152,13 +152,13 @@ We also understand that there are some resources that provide similar services, 
 4.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL:
     
     ```sh
-    DATABASE_URL="azure-cosmos-db-url"
+    DATABASE_URL="teampesto-dev-westus-001.postgres.database.azure.com"
     ```
 
 5.  Run database migrations:
     
     ```py
-    python -c "from app.database import Base, engine; Base.metadata.create_all(bind=engine)"
+    python -c "from ..db_setup import Base, engine; Base.metadata.create_all(bind=engine)"
     ```
 
 5.  Start the FastAPI server:

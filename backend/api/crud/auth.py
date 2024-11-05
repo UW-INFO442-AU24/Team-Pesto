@@ -1,4 +1,7 @@
+import logging as logger
+
 from sqlalchemy.orm import Session
+
 from db.models.user import User
 from ..schemas.auth import UserCreate
 from utils.utils import get_password_hash, verify_password
@@ -21,6 +24,11 @@ def create_user(db: Session, user: UserCreate):
 
 def authenticate_user(db: Session, username: str, password: str):
     user = get_user(db, username)
-    if not user or not verify_password(password, user.hashed_password):
+    if not user:
+        logger.error(f"User {username} not found")
         return False
+    if not verify_password(password, user.hashed_password):
+        logger.error(f"Password for user {username} is incorrect")
+        return False
+    logger.info(f"User {username} authenticated successfully")
     return user

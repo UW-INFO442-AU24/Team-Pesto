@@ -9,7 +9,6 @@ from sqlalchemy import pool
 from alembic import context
 
 from db.db_setup import Base
-from db.models import user, self_assessment, resource, mood
 
 # Load environment variables from .env file
 load_dotenv()

@@ -4,6 +4,7 @@
 
 # after installing dependencies, use this command: pip freeze > requirements.txt
 from fastapi import FastAPI
+import logging
 
 from api.routers import users, auth, moods, resources, self_assessments
 from db.db_setup import engine
@@ -20,8 +21,11 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(users.router, prefix="/users", tags=["users"])
-app.include_router(auth.router, prefix="/auth", tags=["auth"])
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+app.include_router(users.router)
+app.include_router(auth.router)
 app.include_router(moods.router)
 app.include_router(self_assessments.router)
 app.include_router(resources.router)

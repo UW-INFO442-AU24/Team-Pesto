@@ -11,7 +11,7 @@ from api.schemas.auth import User, UserInDB
 from api.schemas.token import TokenData
 from db.db_setup import get_db
 
-SECRET_KEY = os.getenv("SECRET_KEY", "your_default_secret_key")
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
@@ -56,6 +56,4 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
     return user
 
 async def get_current_active_user(current_user: UserInDB = Depends(get_current_user)):
-    if current_user.disabled:
-        raise HTTPException(status_code=400, detail="Inactive user")
     return current_user

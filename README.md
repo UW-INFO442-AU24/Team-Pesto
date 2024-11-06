@@ -83,6 +83,7 @@ We also understand that there are some resources that provide similar services, 
 * [![FastAPI][FastAPI]][FastAPI-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
 * [![Firebase][Firebase]][Firebase-url]
+* [![Microsoft-Azure][Microsoft-Azure]][Microsoft-Azure-url]
 
 <p align=“right”>(<a href=“#readme-top”>back to top</a>)</p>
 
@@ -130,6 +131,7 @@ We also understand that there are some resources that provide similar services, 
     ```
 
 #### Backend
+<!-- NOTE: LOOK INTO SEEING IF NOT YOU NEED TO DO ALEMBIC COMMANDS TO GET TABLES? IDK -->
 1.  Clone the repo
     
     ```sh
@@ -209,6 +211,8 @@ We also understand that there are some resources that provide similar services, 
 [Python-url]: https://www.python.org/
 [FastAPI]: https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi
 [FastAPI-url]: https://fastapi.tiangolo.com/
+[Microsoft-Azure]: https://custom-icon-badges.demolab.com/badge/Microsoft%20Azure-0089D6?logo=msazure&logoColor=white
+[Microsoft-Azure-url]: https://azure.microsoft.con
 [Firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
 [Firebase-url]: https://firebase.google.com/
 [PostgreSQL]: https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white

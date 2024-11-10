@@ -1,0 +1,51 @@
+/* START OF RESOURCES CSS ----------------------------- */
+* {
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    color: #7a5a72;
+}
+
+details {
+    font-family: sans-serif;
+    width: 50%;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 0.5rem;
+}
+
+details:hover {
+    background-color: #FAF8FA;
+}
+
+summary {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+details > p {
+    padding: 1rem;
+    margin: 0;
+    background-color: #e6e6e6;
+}
+
+.links {
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 5px;
+}
+
+.links > a {
+    background-color: #7A5A72;
+    color: white;
+    font-weight: 600;
+    width: 200px;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* END OF RESOURCES CSS ----------------------------- */
+

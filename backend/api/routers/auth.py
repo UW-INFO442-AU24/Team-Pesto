@@ -5,7 +5,7 @@ from datetime import timedelta
 from api.crud import auth as crud_user
 from api.schemas.token import Token
 from db.db_setup import get_db
-from utils.utils import create_access_token
+from utils.utils import create_access_token, blacklist_token, oauth2_scheme
 from api.crud.auth import authenticate_user
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
@@ -28,4 +28,12 @@ async def login_for_access_token(
     access_token = create_access_token(
         data={"sub": user.username}, expires_delta=access_token_expires
     )
+    print(f"Generated access token: {access_token}")
     return {"access_token": access_token, "token_type": "bearer"}
+
+@router.post("/logout")
+async def logout(token: str = Depends(oauth2_scheme)):
+    # Blacklist the token
+    blacklist_token(token, expires_in=ACCESS_TOKEN_EXPIRE_MINUTES * 60)
+    print(f"Blacklisted token: {token}")
+    return {"message": "Successfully logged out"}

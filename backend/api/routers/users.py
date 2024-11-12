@@ -22,3 +22,8 @@ async def read_users_me(current_user: User = Depends(get_current_active_user)):
 @router.put("/me/", response_model=User)
 async def update_user_me(user_update: UserUpdate, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
     return crud_user.update_user(db=db, user_update=user_update, user_id=current_user.id)
+
+@router.delete("/me/", response_model=dict)
+async def delete_user_me(db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
+    crud_user.delete_user(db=db, user_id=current_user.id)
+    return {"message": "User deleted successfully"}

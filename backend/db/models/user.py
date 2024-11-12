@@ -16,5 +16,5 @@ class User(Base):
     email = Column(EmailType, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
 
-    moods = relationship("Mood", back_populates="owner")
+    moods = relationship("Mood", back_populates="owner", cascade="all, delete-orphan")
     self_assessments = relationship("SelfAssessment", back_populates="owner")

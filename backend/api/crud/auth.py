@@ -9,13 +9,12 @@ from utils.utils import get_password_hash, verify_password
 def get_user(db: Session, username: str):
     return db.query(User).filter(User.username == username).first()
 
-def create_user(db: Session, user: UserCreate):
-    hashed_password = get_password_hash(user.password)
+def create_user(db: Session, user_create: UserCreate):
     db_user = User(
-        username=user.username,
-        email=user.email,
-        full_name=user.full_name,
-        hashed_password=hashed_password
+        username=user_create.username,
+        email=user_create.email,
+        full_name=user_create.full_name,
+        hashed_password=get_password_hash(user_create.password)
     )
     db.add(db_user)
     db.commit()

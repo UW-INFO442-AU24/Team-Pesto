@@ -9,12 +9,13 @@ def update_user(db: Session, user_update: UserUpdate, user_id: int):
     if not db_user:
         raise HTTPException(status_code=404, detail="User not found")
     
-    if user_update.password:
-        db_user.hashed_password = get_password_hash(user_update.password)
-    if user_update.full_name is not None:
-        db_user.full_name = user_update.full_name
-    if user_update.email is not None:
-        db_user.email = user_update.email
+    update_data = user_update.model_dump(exclude_unset=True)
+    
+    if 'password' in update_data:
+        db_user.hashed_password = get_password_hash(update_data.pop('password'))
+    
+    for key, value in update_data.items():
+        setattr(db_user, key, value)
     
     db.commit()
     db.refresh(db_user)

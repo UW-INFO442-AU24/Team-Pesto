@@ -157,13 +157,27 @@ We also understand that there are some resources that provide similar services, 
     DATABASE_URL="teampesto-dev-westus-001.postgres.database.azure.com"
     ```
 
-5.  Run database migrations:
+5. Install and start Redis:
+
+    #### On macOS:
+    ```sh
+    brew install redis
+    brew services start redis
+    ```
+
+    #### On Windows:
+    ```sh
+    Follow the instructions on the redis website linked below
+    ```
+    [Redis Windows Installation](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
+
+6.  Run database migrations:
     
     ```py
     python -c "from ..db_setup import Base, engine; Base.metadata.create_all(bind=engine)"
     ```
 
-5.  Start the FastAPI server:
+7.  Start the FastAPI server:
     
     ```sh
     uvicorn app.main:app --reload
@@ -176,8 +190,8 @@ We also understand that there are some resources that provide similar services, 
 
 ## Roadmap
 
--   [ ] Login/Sign-up
--   [ ] Mood tracking
+-   [x] Login/Sign-up
+-   [x] Mood tracking
 -   [ ] Data input through self-assessments, sleep tracking, medications, etc.
 -   [ ] Self-assessments based on professional quizzes online
 -   [ ] Page for mental health resources

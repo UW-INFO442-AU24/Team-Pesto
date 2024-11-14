@@ -6,7 +6,7 @@
 from fastapi import FastAPI
 import logging
 
-from api.routers import users, auth, moods, resources, self_assessments
+from api.routers import users, auth, moods, self_assessments
 from db.db_setup import engine
 from db.models import user, mood, self_assessment, resource
 
@@ -28,4 +28,3 @@ app.include_router(users.router)
 app.include_router(auth.router)
 app.include_router(moods.router)
 app.include_router(self_assessments.router)
-app.include_router(resources.router)

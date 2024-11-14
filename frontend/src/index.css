@@ -1,3 +1,50 @@
+/* // About us */
+.about-us-body {
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+.container-about-us {
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+}
+.mission {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.team-member {
+    width: 150px;
+    text-align: center;
+}
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+.team-member h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+}
+.team-member a {
+    color: #0077b5;
+    text-decoration: none;
+    font-size: 0.9em;
+}
 /* START OF RESOURCES CSS ----------------------------- */
 * {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -53,8 +100,6 @@ details > p {
 
 /* END OF RESOURCES CSS ----------------------------- */
 
-<<<<<<< HEAD
-=======
 /*START OF LOGIN FORM CSS -----------------------------------*/
 
 * {
@@ -125,4 +170,85 @@ body {
 
 
 /*END OF LOGIN FORM CSS --------------------------------------*/
->>>>>>> feature/login-form
+
+/* Start of Nav Bar CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .nav-bar-body {
+    font-family: Helvetica, sans-serif;
+    color: #5a4a5e; /* Dark purple for text */
+  }
+  
+  .logo-nav-bar-container {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #f9f7fa;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  
+  nav {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between; /* Space links equally across the container */
+    flex-grow: 1;
+    list-style: none;
+    margin: 0 20px; /* Add some margin to provide spacing from the logo and profile icon */
+  }
+  
+  
+  .nav-links li {
+    font-size: 1em;
+  }
+  
+  .nav-links a {
+    color: #5a4a5e; /* Dark purple for links */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .nav-links a:hover {
+    color: #333; /* Darker color on hover */
+  }
+  
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #5a4a5e;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-links a:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .profile-icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-icon img {
+    width: 50px; /* Size of the profile icon */
+    height: auto;
+    border-radius: 50%;
+  }
+  /* End of Nav Bar CSS*/

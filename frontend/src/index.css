@@ -69,7 +69,7 @@ body {
     background-color: #FAF8FA;
 }
 
-/* Styling the login form container */
+
 .login_form {
     width: 50%;
     max-width: 400px;
@@ -81,14 +81,13 @@ body {
     text-align: center;
 }
 
-/* Header style within the form */
 .login_form h1 {
     color: #7a5a72;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-/* Styling input fields */
+
 .login_form input {
     width: 80%;
     padding: 10px;
@@ -99,7 +98,7 @@ body {
     text-align: center;
 }
 
-/* Styling the login button */
+
 .login_form button {
     width: 100%;
     padding: 10px;
@@ -116,7 +115,7 @@ body {
     background-color: #5f4758;
 }
 
-/* Error message styling */
+
 #error-message {
     color: red;
     margin-top: 10px;

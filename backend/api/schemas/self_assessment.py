@@ -22,7 +22,6 @@ class Answer(AnswerBase):
 
 # response model
 class ResponseBase(BaseModel):
-    user_id: str
     answers: List[AnswerBase]
 
 class ResponseCreate(ResponseBase):

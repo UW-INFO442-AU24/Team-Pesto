@@ -6,31 +6,31 @@ const teamMembers = [
     {
         name: "Safa Jamal",
         role: "UX Designer + Front-end Developer",
-        imgSrc: "team-member1.jpg",
+        imgSrc: "./public/images/safa-picture.jpg",
         linkedIn: "https://www.linkedin.com/in/safa-jamal/"
     },
     {
         name: "Joey Kang",
         role: "Backend Developer",
-        imgSrc: "team-member2.jpg",
+        imgSrc: "./public/images/joey-picture.jpg",
         linkedIn: "https://www.linkedin.com/in/johnsmith"
     },
     {
         name: "Mynah Shetty",
         role: "UX Designer + Front-end Developer",
-        imgSrc: "team-member3.jpg",
+        imgSrc: "./public/images/mynah-picture.jpg",
         linkedIn: "https://www.linkedin.com/in/emilyjohnson"
     },
     {
         name: "Mira Nair",
         role: "UX Designer + Front-end Developer",
-        imgSrc: "team-member3.jpg",
+        imgSrc: "./public/images/mira-picture.jpg",
         linkedIn: "https://www.linkedin.com/in/miranair"
     },
     {
         name: "Katie Shi",
         role: "UX Designer + Front-end Developer",
-        imgSrc: "team-member5.jpg",
+        imgSrc: "./public/images/katie-picture.jpg",
         linkedIn: "https://www.linkedin.com/in/"
     }
 ];

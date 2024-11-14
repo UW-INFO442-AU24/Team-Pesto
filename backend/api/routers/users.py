@@ -13,7 +13,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = crud_auth.get_user(db, username=user.username)
     if db_user:
         raise HTTPException(status_code=400, detail="Username already registered")
-    return crud_auth.create_user(db=db, user=user)
+    return crud_auth.create_user(db=db, user_create=user)
 
 @router.get("/me/", response_model=User)
 async def read_users_me(current_user: User = Depends(get_current_active_user)):

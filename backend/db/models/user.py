@@ -1,13 +1,9 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy_utils import EmailType, PasswordType
+from sqlalchemy_utils import EmailType
 from sqlalchemy.orm import relationship
-
 from ..db_setup import Base
 
 class User(Base):
-    """
-    User profile
-    """
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -17,4 +13,4 @@ class User(Base):
     hashed_password = Column(String, nullable=False)
 
     moods = relationship("Mood", back_populates="owner", cascade="all, delete-orphan")
-    self_assessments = relationship("SelfAssessment", back_populates="owner")
+    self_assessments = relationship("Response", back_populates="owner", cascade="all, delete-orphan")

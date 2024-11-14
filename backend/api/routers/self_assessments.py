@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
@@ -52,3 +53,8 @@ def read_response(response_id: int, db: Session = Depends(get_db)):
 @router.post("/responses", response_model=ResponseSchema)
 def create_new_response(response: ResponseCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
     return create_response(db=db, response=response, user_id=current_user.id)
+=======
+import fastapi
+
+router = fastapi.APIRouter()
+>>>>>>> feature/login-form

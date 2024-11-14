@@ -13,7 +13,11 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = crud_auth.get_user(db, username=user.username)
     if db_user:
         raise HTTPException(status_code=400, detail="Username already registered")
+<<<<<<< HEAD
     return crud_auth.create_user(db=db, user_create=user)
+=======
+    return crud_auth.create_user(db=db, user=user)
+>>>>>>> feature/login-form
 
 @router.get("/me/", response_model=User)
 async def read_users_me(current_user: User = Depends(get_current_active_user)):
@@ -26,4 +30,8 @@ async def update_user_me(user_update: UserUpdate, db: Session = Depends(get_db),
 @router.delete("/me/", response_model=dict)
 async def delete_user_me(db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
     crud_user.delete_user(db=db, user_id=current_user.id)
+<<<<<<< HEAD
     return {"message": "User deleted successfully"}
+=======
+    return {"message": "User deleted successfully"}
+>>>>>>> feature/login-form

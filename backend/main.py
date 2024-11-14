@@ -8,11 +8,19 @@ import logging
 
 from api.routers import users, auth, moods, self_assessments
 from db.db_setup import engine
+<<<<<<< HEAD
 from db.models import user, mood, self_assessment
+=======
+from db.models import user, mood, self_assessment, resource
+>>>>>>> feature/login-form
 
 user.Base.metadata.create_all(bind=engine)
 mood.Base.metadata.create_all(bind=engine)
 self_assessment.Base.metadata.create_all(bind=engine)
+<<<<<<< HEAD
+=======
+resource.Base.metadata.create_all(bind=engine)
+>>>>>>> feature/login-form
 
 app = FastAPI(
     title="AU24: INFO 442 Team Pesto",

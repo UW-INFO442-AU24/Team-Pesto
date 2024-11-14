@@ -48,6 +48,7 @@ python-dotenv==1.0.1
 python-jose==3.3.0
 python-multipart==0.0.12
 PyYAML==6.0.2
+redis==5.2.0
 requests==2.32.3
 rich==13.9.2
 rsa==4.9

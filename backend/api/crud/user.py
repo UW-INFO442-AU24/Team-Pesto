@@ -18,7 +18,7 @@ def update_user(db: Session, user_update: UserUpdate, user_id: int):
         setattr(db_user, key, value)
     
     db.commit()
-    db.refresh(db_user)
+    db.refresh(db_user) 
     return db_user
 
 def delete_user(db: Session, user_id: int):

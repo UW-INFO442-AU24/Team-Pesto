@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      color: #4c2d48;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .appointments {
+      margin-bottom: 30px;
+    }
+
+    .appointments button {
+      background-color: #8e597b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .appointments button:hover {
+      background-color: #734b64;
+    }
+
+    .mood-section, .achievement-section, .mind-section {
+      margin-bottom: 30px;
+    }
+
+    .mood-section p,
+    .achievement-section p,
+    .mind-section p {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .mood-options {
+      display: flex;
+      justify-content: space-between;
+      background-color: #e6dce4;
+      border-radius: 10px;
+      padding: 15px;
+    }
+
+    .mood-options div {
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #8e597b;
+      color: white;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .mood-options div:hover {
+      background-color: #734b64;
+    }
+
+    textarea {
+      width: 100%;
+      height: 60px;
+      border: 2px solid #8e597b;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    textarea::placeholder {
+      color: #999;
+    }
+
+    .achievement-section textarea {
+      height: 80px;
+    }
+
+    .submit-btn {
+      display: block;
+      background-color: #5e5e5e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 auto;
+    }
+
+    .submit-btn:hover {
+      background-color: #444;
+    }
+
+    .achievement-icon {
+      position: relative;
+      float: right;
+      margin-top: -55px;
+      margin-right: 10px;
+      font-size: 18px;
+      color: #8e597b;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, Sarah</h1>
+
+    <div class="appointments">
+      <h2>Upcoming Appointments</h2>
+      <button>Therapy<br>10/30/24, 10:00 AM @ Location</button>
+      <button>Peer Support Group<br>10/30/24, 10:00 AM @ Location</button>
+      <button>Peer Support Group</button>
+    </div>
+
+    <div class="mood-section">
+      <h2>How are you feeling today?</h2>
+      <p>Rate your mood from 1 (very low) to 5 (very positive) for your own tracking—no right or wrong answers.</p>
+      <div class="mood-options">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+    </div>
+
+    <div class="achievement-section">
+      <h2>Daily Achievement</h2>
+      <p>Every win counts. This is a place to celebrate any step you take on your journey—big or small.</p>
+      <textarea placeholder="Today I..."></textarea>
+      <div class="achievement-icon">🎉</div>
+    </div>
+
+    <div class="mind-section">
+      <h2>What's on Your Mind?</h2>
+      <p>Your thoughts and feelings matter. Write down anything that’s on your mind—for your eyes only.</p>
+      <textarea placeholder="Type Here"></textarea>
+    </div>
+
+    <button class="submit-btn">Submit</button>
+  </div>
+</body>
+</html>

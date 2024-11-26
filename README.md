@@ -109,7 +109,7 @@ We also understand that there are some resources that provide similar services, 
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh
 
     # download and install Node.js and npm
-    nvm install 20
+    npm install 20
     ```
     
 2.  Navigate to the frontend directory

@@ -261,8 +261,8 @@ details > p {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   background-color: white;
-  text-align: left; /* Align text to the left */
-  margin: 0 auto; /* Center the form horizontally */
+  text-align: left; 
+  margin: 0 auto;
 }
 
 .signup_form h2 {
@@ -272,23 +272,23 @@ details > p {
 }
 
 .signup_form label {
-  display: block; /* Ensure label is above the input */
+  display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #333;
 }
 
 .signup_form input {
-  width: 100%; /* Make inputs full width */
+  width: 100%;
   padding: 10px;
-  margin-bottom: 15px; /* Add space between inputs */
+  margin-bottom: 15px; 
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
 }
 
 .signup_form button {
-  width: 100%; /* Make the button full width */
+  width: 100%;
   padding: 10px;
   background-color: #7A5A72;
   color: white;
@@ -308,3 +308,52 @@ details > p {
   margin-top: 10px;
 }
   /*END OF SIGNUP FORM CSS -----------------------------------*/
+    /* START OF SELF ASSESSMENT CSS -----------------------------------*/
+.self-assessment-quiz {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 700px;
+  color: #333;
+  background-color: #f7f5f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.self-assessment-quiz h1 {
+  font-size: 2em;
+  color: #7A5A72;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#epds-quiz {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quiz-question {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #ffffff; 
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+}
+
+.quiz-question p {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #5A4A5E;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-options label
+    /* END OF SELF ASSESSMENT CSS -----------------------------------*/

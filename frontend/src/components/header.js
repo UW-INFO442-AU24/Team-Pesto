@@ -1,43 +1,52 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '.../images/hera_logo.png';
-import { getAuth, signOut } from 'firebase/auth';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
-  const auth = getAuth();
-  const user = auth.currentUser;
+  const [showMenu, setShowMenu] = useState(false);
 
-  const handleSignOut = () => {
-    signOut(auth)
-      .then(() => {
-        console.log('User signed out');
-      })
-      .catch((error) => {
-        console.error('Error signing out:', error);
-      });
-  };
+  function toggleDropDown() {
+    setShowMenu(!showMenu);
+  }
 
   return (
     <header>
       <div className="logo-nav-bar-container">
-        <img src={logo} alt="hera logo" className="logo" />
+        <img src="/images/hera_logo.png" alt="hera logo" className="logo" />
         <nav>
-          <ul>
-            <li><Link to="/home">HomePage</Link></li>
-            <li><Link to="/aboutus">AboutUs</Link></li>
-            
-          </ul>
-        </nav>
-        <div className="auth-container">
-          {user ? (
-            <button onClick={handleSignOut} className="sign-out-button">
-              Sign Out
+          <div className="menu">
+            <button
+              type="button"
+              className="dropDownButton"
+              onClick={toggleDropDown}
+              aria-label="hamburger-menu"
+            >
+              <span className="material-symbols-outlined">menu</span>
             </button>
-          ) : (
-            <Link to="/signin" className="sign-in-link">
-              Sign In
-            </Link>
-          )}
+            <div className="mask" hidden={!showMenu} onClick={toggleDropDown}></div>
+            <div className="dropDown" hidden={!showMenu}>
+              <ul className="nav-links">
+                <li>
+                  <NavLink to="/" exact>
+                    Home
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/about-us">About Us</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/wellness-history">Wellness History</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/resources">Resources</NavLink>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <div className="profile-icon">
+          <NavLink to="/profile">
+            <img src="/images/profile_icon.png" alt="Profile" />
+          </NavLink>
         </div>
       </div>
     </header>

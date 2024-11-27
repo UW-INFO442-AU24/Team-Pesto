@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import Header from "../src/components/header.js";
 import Homepage from "../src/components/homepage.js";
 import AboutUs from "../src/components/about-us.js"
+import SelfAssessmentQuiz from './components/self-assessment-quiz'
 
-
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />

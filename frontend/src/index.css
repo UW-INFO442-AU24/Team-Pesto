@@ -51,31 +51,39 @@
 }
 
 h1 {
-    color: #7a5a72;
+  color: #7a5a72;
+  padding: 1rem;
+}
+
+.intro > h2, 
+.intro > p {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 details {
-    font-family: sans-serif;
-    width: 50%;
-    border: 1px solid lightgrey;
-    border-radius: 5px;
-    margin: 0.5rem;
+  font-family: sans-serif;
+  width: 75%;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  margin: 0.5rem;
 }
 
 details:hover {
-    background-color: #FAF8FA;
+  background-color: #FAF8FA;
 }
 
 summary {
-    margin: 0.5rem;
-    padding: 0.5rem;
-    cursor: pointer;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
-details > p {
+details > p,
+details > ul,
+details > li {
     padding: 1rem;
     margin: 0;
-    background-color: #e6e6e6;
 }
 
 .links {
@@ -84,7 +92,7 @@ details > p {
     overflow-x: auto;
     white-space: nowrap;
     border-radius: 5px;
-    padding-bottom: 10px;
+    padding-bottom: 1rem;
 }
 
 .links > a {
@@ -96,6 +104,15 @@ details > p {
     padding: 15px;
     border-radius: 5px;
     flex: 0 0 auto;
+}
+
+.resources {
+  padding-left: 1rem; 
+  padding-bottom: 1rem;
+}
+
+.video {
+  padding: 1rem;
 }
 
 /* END OF RESOURCES CSS ----------------------------- */

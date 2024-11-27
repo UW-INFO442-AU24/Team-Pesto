@@ -1,54 +1,87 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Header() {
-  const [showMenu, setShowMenu] = useState(false);
+function CreateHeader() {
+  const headerStyle = {
+    backgroundColor: "#4c2d48",
+    color: "white",
+    padding: "10px 20px",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  };
 
-  function toggleDropDown() {
-    setShowMenu(!showMenu);
-  }
+  const logoStyle = {
+    fontSize: "24px",
+    fontWeight: "bold",
+  };
 
-  return (
-    <header>
-      <div className="logo-nav-bar-container">
-        <img src="/images/hera_logo.png" alt="hera logo" className="logo" />
-        <nav>
-          <div className="menu">
-            <button
-              type="button"
-              className="dropDownButton"
-              onClick={toggleDropDown}
-              aria-label="hamburger-menu"
-            >
-              <span className="material-symbols-outlined">menu</span>
-            </button>
-            <div className="mask" hidden={!showMenu} onClick={toggleDropDown}></div>
-            <div className="dropDown" hidden={!showMenu}>
-              <ul className="nav-links">
-                <li>
-                  <NavLink to="/" exact>
-                    Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about-us">About Us</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/wellness-history">Wellness History</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/resources">Resources</NavLink>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <div className="profile-icon">
-          <NavLink to="/profile">
-            <img src="/images/profile_icon.png" alt="Profile" />
-          </NavLink>
-        </div>
-      </div>
-    </header>
+  const navStyle = {
+    listStyle: "none",
+    display: "flex",
+    gap: "20px",
+    margin: "0",
+    padding: "0",
+  };
+
+  const navLinkStyle = {
+    color: "white",
+    textDecoration: "none",
+  };
+
+  const activeLinkStyle = {
+    borderBottom: "2px solid #ffddc1",
+  };
+
+  const profileIconStyle = {
+    width: "40px",
+    height: "40px",
+    borderRadius: "50%",
+    backgroundColor: "#ffddc1",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "18px",
+    color: "#4c2d48",
+    cursor: "pointer",
+  };
+
+  // Return the header structure
+  return React.createElement(
+    "header",
+    { style: headerStyle },
+    React.createElement("div", { style: logoStyle }, "My App"),
+    React.createElement(
+      "ul",
+      { style: navStyle },
+      React.createElement(
+        "li",
+        null,
+        React.createElement(
+          NavLink,
+          { to: "/", style: navLinkStyle, activeStyle: activeLinkStyle },
+          "Home"
+        )
+      ),
+      React.createElement(
+        "li",
+        null,
+        React.createElement(
+          NavLink,
+          { to: "/about-us", style: navLinkStyle, activeStyle: activeLinkStyle },
+          "About"
+        )
+      )
+    ),
+    React.createElement(
+      "div",
+      { style: profileIconStyle },
+      "S" // Placeholder for the profile icon
+    )
   );
+}
+
+// Call CreateHeader at the bottom
+export default function Header() {
+  return CreateHeader();
 }

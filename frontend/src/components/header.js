@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../index.css"
 
-export default function Header() {
+const Header = () => {
   return (
     <header>
       <div className="logo-nav-bar-container">
@@ -34,3 +34,6 @@ export default function Header() {
     </header>
   );
 }
+
+// Call the function to insert the header
+export default Header;

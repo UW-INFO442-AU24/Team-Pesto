@@ -5,7 +5,8 @@ import Homepage from "../src/components/homepage.js";
 import AboutUs from "../src/components/about-us.js"
 import SelfAssessmentQuiz from './components/self-assessment-quiz'
 import Resources from './components/resources.js'
-
+import Login from './components/login_form'
+import Signup from './components/signup_form'
 const App = () => {
   return (
     <div>
@@ -21,6 +22,12 @@ const App = () => {
           </Route> */}  
           <Routes>
             <Route path="/" element={<Resources />} />
+          </Routes>
+          <Routes>
+            <Route path="/" element={<Login />} />
+          </Routes>
+          <Routes>
+            <Route path="/" element={<Signup />} />
           </Routes>
           {/* <Route path="/profile">
             <h1>Profile</h1>

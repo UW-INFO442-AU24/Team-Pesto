@@ -11,7 +11,7 @@ const App = () => {
     <div>
       
       <Router>
-        {/* <Header /> */}
+        <Header />
           {/* <Route path="/homepage" element={<Homepage />} />
           <Route path="/about-us" exact>
             <h1>About Us</h1>

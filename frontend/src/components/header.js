@@ -1,34 +1,17 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import "../index.css"
 
 export default function Header() {
-  const [showMenu, setShowMenu] = useState(false);
-
-  function toggleDropDown() {
-    setShowMenu(!showMenu);
-  }
-
   return (
     <header>
       <div className="logo-nav-bar-container">
-        <img src="/images/hera_logo.png" alt="hera logo" className="logo" />
+        <img src="./images/hera_logo.png" alt="hera logo" className="logo" />
         <nav>
-          <div className="menu">
-            <button
-              type="button"
-              className="dropDownButton"
-              onClick={toggleDropDown}
-              aria-label="hamburger-menu"
-            >
-              <span className="material-symbols-outlined">menu</span>
-            </button>
-            <div className="mask" hidden={!showMenu} onClick={toggleDropDown}></div>
-            <div className="dropDown" hidden={!showMenu}>
+            <div>
               <ul className="nav-links">
                 <li>
-                  <NavLink to="/" exact>
-                    Home
-                  </NavLink>
+                  <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
                   <NavLink to="/about-us">About Us</NavLink>
@@ -41,7 +24,6 @@ export default function Header() {
                 </li>
               </ul>
             </div>
-          </div>
         </nav>
         <div className="profile-icon">
           <NavLink to="/profile">

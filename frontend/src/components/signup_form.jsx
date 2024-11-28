@@ -7,7 +7,6 @@ const SignupForm = () => {
       <div className="signup_form">
         <h2>Sign Up</h2>
         <form id="signupForm">
-          {/* Username Input */}
           <div className="form_group">
             <label htmlFor="username">Username</label>
             <input
@@ -19,7 +18,6 @@ const SignupForm = () => {
             />
           </div>
 
-          {/* Email Input */}
           <div className="form_group">
             <label htmlFor="email">Email</label>
             <input
@@ -31,7 +29,6 @@ const SignupForm = () => {
             />
           </div>
 
-          {/* Password Input */}
           <div className="form_group">
             <label htmlFor="password">Password</label>
             <input
@@ -43,7 +40,6 @@ const SignupForm = () => {
             />
           </div>
 
-          {/* Confirm Password Input */}
           <div className="form_group">
             <label htmlFor="confirm-password">Confirm Password</label>
             <input
@@ -55,7 +51,6 @@ const SignupForm = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <button type="submit">Sign Up</button>
         </form>
         <p id="signup-error-message"></p>

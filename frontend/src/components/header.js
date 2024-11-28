@@ -1,39 +1,32 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "../index.css"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../images/hera_logo.png'; // Use import for image
+import profileIcon from '../images/profile_icon.png'; // Use import for image
+import '../index.css';
 
 const Header = () => {
   return (
-    <header>
+    <header className="nav-bar-body">
       <div className="logo-nav-bar-container">
-        <img src="./images/hera_logo.png" alt="hera logo" className="logo" />
+        <img src={logo} alt="Hera logo" className="logo" /> {/* Use imported image here */}
+        
         <nav>
-            <div>
-              <ul className="nav-links">
-                <li>
-                  <NavLink to="/">Home</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about-us">About Us</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/wellness-history">Wellness History</NavLink>
-                </li>
-                <li>
-                  <NavLink to="/resources">Resources</NavLink>
-                </li>
-              </ul>
-            </div>
+          <ul className="nav-links">
+            <li><Link to="/homepage">Home</Link></li> {/* Remove .js from the route */}
+            <li><Link to="/resources">Check-In</Link></li>
+            <li><Link to="/about-us">About Us</Link></li> {/* Remove .js from the route */}
+            <li><Link to="/login_form">Login</Link></li>
+          </ul>
         </nav>
-        <div className="profile-icon">
-          <NavLink to="/profile">
-            <img src="/images/profile_icon.png" alt="Profile" />
-          </NavLink>
-        </div>
+
+        {/* <div className="profile-icon"> */}
+          {/* <Link to="/login_form">
+            <img src={profileIcon} alt="Profile" />
+          </Link> */}
+        {/* </div> */}
       </div>
     </header>
   );
-}
+};
 
-// Call the function to insert the header
 export default Header;

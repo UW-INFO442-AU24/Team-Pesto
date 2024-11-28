@@ -1,50 +1,63 @@
 /* // About us */
+/* About Us */
 .about-us-body {
-    display: flex;
-    font-family: Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    flex-direction: column;
-    align-items: center;
-    color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Ensures vertical alignment if needed */
+  font-family: Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh; /* Ensures it takes full height of the viewport */
 }
+
 .container-about-us {
-    width: 80%;
-    max-width: 1000px;
-    text-align: center;
+  width: 80%;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto; /* Centers the container horizontally */
 }
+
 .mission {
-    margin: 20px 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
 }
+
 .team {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centers the team members */
 }
+
 .team-member {
-    width: 150px;
-    text-align: center;
+  width: 150px;
+  text-align: center;
 }
+
 .team-member img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ddd;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
 }
+
 .team-member h3 {
-    font-size: 1.2em;
-    margin: 10px 0 5px;
+  font-size: 1.2em;
+  margin: 10px 0 5px;
 }
+
 .team-member a {
-    color: #0077b5;
-    text-decoration: none;
-    font-size: 0.9em;
+  color: #0077b5;
+  text-decoration: none;
+  font-size: 0.9em;
 }
+
+
 /* START OF RESOURCES CSS ----------------------------- */
 * {
     font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -373,3 +386,127 @@ details > li {
 }
 
     /* END OF SELF ASSESSMENT CSS -----------------------------------*/
+
+    /* START OF HOMEPAGE*/
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  color: #4c2d48;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.appointments {
+  margin-bottom: 30px;
+}
+
+.appointments button {
+  background-color: #8e597b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.appointments button:hover {
+  background-color: #734b64;
+}
+
+.mood-section, .achievement-section, .mind-section {
+  margin-bottom: 30px;
+}
+
+.mood-section p,
+.achievement-section p,
+.mind-section p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e6dce4;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.mood-options div {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #8e597b;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.mood-options div:hover {
+  background-color: #734b64;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  border: 2px solid #8e597b;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+textarea::placeholder {
+  color: #999;
+}
+
+.achievement-section textarea {
+  height: 80px;
+}
+
+.submit-btn {
+  display: block;
+  background-color: #5e5e5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.submit-btn:hover {
+  background-color: #444;
+}
+
+.achievement-icon {
+  position: relative;
+  float: right;
+  margin-top: -55px;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #8e597b;
+  cursor: pointer;
+}
+/*END OF HOMEPAGE*/
+

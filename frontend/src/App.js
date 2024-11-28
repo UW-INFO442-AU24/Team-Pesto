@@ -2,10 +2,10 @@ import React from "react";
 
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Header from "../src/components/header.js";
-import Homepage from "../src/components/homepage.js";
+import Resources from "../src/components/homepage.js";
 import AboutUs from "../src/components/about-us.js"
-import SelfAssessmentQuiz from './components/self-assessment-quiz'
-import Resources from './components/resources.js'
+// import SelfAssessmentQuiz from './components/self-assessment-quiz'
+import Homepage from './components/resources.js'
 import Login from './components/login_form'
 import Signup from './components/signup_form'
 const App = () => {
@@ -13,28 +13,19 @@ const App = () => {
     <div>
       
       <Router>
-        {/* <Header /> */}
-          {/* <Route path="/homepage" element={<Homepage />} />
-          <Route path="/about-us" exact>
-            <h1>About Us</h1>
-          </Route>
-          <Route path="/wellness-history">
-            <h1>Wellness History</h1>
-          </Route> */}  
+        <Header /> 
           <Routes>
-            <Route path="/" element={<Resources />} />
-          </Routes>
-          <Routes>
-            <Route path="/" element={<Homepage />} />
-          </Routes>
-          <Routes>
-            <Route path="/" element={<AboutUs />} />
-          </Routes>
-          <Routes>
-            <Route path="/" element={<Login />} />
-          </Routes>
-          <Routes>
-            <Route path="/" element={<Signup />} />
+            <Route path="/resources" element={<Resources />} />
+          
+          
+            <Route path="/homepage" element={<Homepage />} />
+          
+          
+            <Route path="/about-us" element={<AboutUs />} />
+          
+            <Route path="/login_form" element={<Login />} />
+          
+            <Route path="/signup_form" element={<Signup />} />
           </Routes>
           {/* <Route path="/profile">
             <h1>Profile</h1>

@@ -1,210 +1,90 @@
-// Importing the images
+import React from 'react';
+import '../index.css';
+
+// Importing images
 import safaImage from '../images.team/safa_picture.jpeg';
 import joeyImage from '../images.team/joey_picture.jpeg';
-import mynhaImage from '../images.team/mynah_picture.jpeg';
+import mynahImage from '../images.team/mynah_picture.jpeg';
 import miraImage from '../images.team/mira_picture.jpeg';
 import katieImage from '../images.team/katie_picture.jpeg';
 
-function createAboutUsPage() {
-    // Create container for the entire page
-    const container = document.createElement('div');
-    container.classList.add('container-about-us');
+// TeamMember Component to display individual team members
+const TeamMember = ({ name, role, imgSrc, linkedInUrl }) => {
+  return (
+    <div className="team-member">
+      <img src={imgSrc} alt={name} />
+      <h3>{name}</h3>
+      <p>{role}</p>
+      <a href={linkedInUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  );
+};
 
-    // Title
-    const title = document.createElement('h1');
-    title.classList.add('about-us-h1');
-    title.textContent = 'About Us';
-    container.appendChild(title);
+// AboutUs Component to display the entire About Us section
+const AboutUs = () => {
+  return (
+    <div className="container-about-us">
+      <h1 className="about-us-h1">About Us</h1>
 
-    // Mission Section
-    const missionSection = document.createElement('section');
-    missionSection.classList.add('mission');
+      {/* Mission Section */}
+      <section className="mission">
+        <h2 className="about-us-h2">Our Mission</h2>
+        <p>
+          Postpartum depression is a serious mental health condition that affects 
+          approximately 13% of mothers globally. In developing countries, 
+          this number rises to almost 20%. It can have severe consequences for 
+          both the mother and the child, impacting bonding, child development, and 
+          overall family well-being. This application is designed to support mothers experiencing 
+          postpartum depression by providing tools for mood tracking, self-assessment, community support, 
+          and access to educational resources.
+        </p>
+      </section>
 
-    const missionTitle = document.createElement('h2');
-    missionTitle.classList.add('about-us-h2');
-    missionTitle.textContent = 'Our Mission';
-    missionSection.appendChild(missionTitle);
+      {/* Team Section */}
+      <h2>Meet the Team</h2>
+      <section className="team">
+        {/* Team Member 1 */}
+        <TeamMember 
+          name="Safa Jamal"
+          role="UX Designer + Front-end Developer"
+          imgSrc={safaImage}
+          linkedInUrl="https://www.linkedin.com/in/safa-jamal/"
+        />
 
-    const missionParagraph = document.createElement('p');
-    missionParagraph.textContent =
-        'Postpartum depression is a serious mental health condition that affects approximately 13% of mothers globally. In developing countries, this number rises to almost 20%. It can have severe consequences for both the mother and the child, impacting bonding, child development, and overall family well-being. This application is designed to support mothers experiencing postpartum depression by providing tools for mood tracking, self-assessment, community support, and access to educational resources. We aim to create a compassionate space where mothers can feel supported and empowered during one of the most challenging times in their lives.';
-    missionSection.appendChild(missionParagraph);
-    container.appendChild(missionSection);
+        {/* Team Member 2 */}
+        <TeamMember 
+          name="Joey Kang"
+          role="Backend Developer"
+          imgSrc={joeyImage}
+          linkedInUrl="https://www.linkedin.com/in/joey--kang/"
+        />
 
-    // Team Section
-    const teamTitle = document.createElement('h2');
-    teamTitle.classList.add('about-us-h2');
-    teamTitle.textContent = 'Meet the Team';
-    container.appendChild(teamTitle);
+        {/* Team Member 3 */}
+        <TeamMember 
+          name="Mynah Shetty"
+          role="Front-end Developer"
+          imgSrc={mynahImage}
+          linkedInUrl="https://www.linkedin.com/in/mynahshetty/"
+        />
 
-    const teamSection = document.createElement('section');
-    teamSection.classList.add('team');
+        {/* Team Member 4 */}
+        <TeamMember 
+          name="Mira Nair"
+          role="Front-end Developer"
+          imgSrc={miraImage}
+          linkedInUrl="https://www.linkedin.com/in/miranair/"
+        />
 
-    // Team Members Array with imported images
-    const teamMembers = [
-        {
-            name: 'Safa Jamal',
-            role: 'UX Designer + Front-end Developer',
-            image: safaImage, // imported image
-            linkedin: 'https://www.linkedin.com/in/safa-jamal/'
-        },
-        {
-            name: 'Joey Kang',
-            role: 'Backend Developer',
-            image: joeyImage, // imported image
-            linkedin: 'https://www.linkedin.com/in/joey--kang/'
-        },
-        {
-            name: 'Mynah Shetty',
-            role: 'Front-end Developer',
-            image: mynhaImage, // imported image
-            linkedin: 'https://www.linkedin.com/in/mynahshetty/'
-        },
-        {
-            name: 'Mira Nair',
-            role: 'Front-end Developer',
-            image: miraImage, // imported image
-            linkedin: 'https://www.linkedin.com/in/miranair/'
-        },
-        {
-            name: 'Katie Shi',
-            role: 'Front-end Developer',
-            image: katieImage, // imported image
-            linkedin: 'https://www.linkedin.com/in/katie-shi-ab4973185/'
-        }
-    ];
+        {/* Team Member 5 */}
+        <TeamMember 
+          name="Katie Shi"
+          role="Front-end Developer"
+          imgSrc={katieImage}
+          linkedInUrl="https://www.linkedin.com/in/katie-shi-ab4973185/"
+        />
+      </section>
+    </div>
+  );
+};
 
-    teamMembers.forEach(member => {
-        const teamMemberDiv = document.createElement('div');
-        teamMemberDiv.classList.add('team-member');
-
-        const teamMemberImage = document.createElement('img');
-        teamMemberImage.src = member.image;
-        teamMemberImage.alt = member.name;
-        teamMemberDiv.appendChild(teamMemberImage);
-
-        const teamMemberName = document.createElement('h3');
-        teamMemberName.textContent = member.name;
-        teamMemberDiv.appendChild(teamMemberName);
-
-        const teamMemberRole = document.createElement('p');
-        teamMemberRole.textContent = member.role;
-        teamMemberDiv.appendChild(teamMemberRole);
-
-        const teamMemberLink = document.createElement('a');
-        teamMemberLink.href = member.linkedin;
-        teamMemberLink.target = '_blank';
-        teamMemberLink.textContent = 'LinkedIn';
-        teamMemberDiv.appendChild(teamMemberLink);
-
-        teamSection.appendChild(teamMemberDiv);
-    });
-
-    container.appendChild(teamSection);
-
-    // Add the entire container to the body
-    document.body.appendChild(container);
-}
-
-function addStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-    /* Body styling */
-    .container-about-us {
-        display: flex;
-        font-family: Helvetica, sans-serif;
-        margin: 0;
-        padding: 0;
-        flex-direction: column;
-        align-items: center;
-        color: #333;
-        background-color: #f9f9f9;
-    }
-
-    /* Title Styling */
-    .about-us-h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-        color: #333;
-    }
-
-    /* Mission Section */
-    .mission {
-        margin: 20px 0;
-        padding: 20px;
-        background-color: #f4f4f4;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .about-us-h2 {
-        font-size: 1.8em;
-        color: #555;
-    }
-
-    .mission p {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #666;
-    }
-
-    /* Team Section */
-    .team {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: center;
-        margin-top: 40px;
-    }
-
-    /* Team Member Styling */
-    .team-member {
-        width: 180px;
-        text-align: center;
-        padding: 10px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .team-member:hover {
-        transform: translateY(-5px);
-    }
-
-    .team-member img {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #ddd;
-    }
-
-    .team-member h3 {
-        font-size: 1.2em;
-        margin: 10px 0 5px;
-        color: #333;
-    }
-
-    .team-member p {
-        font-size: 1em;
-        color: #777;
-        margin-bottom: 10px;
-    }
-
-    .team-member a {
-        color: #0077b5;
-        text-decoration: none;
-        font-size: 0.9em;
-    }
-
-    .team-member a:hover {
-        text-decoration: underline;
-    }
-    `;
-    document.head.appendChild(style);
-}
-
-addStyles();
-// Initialize the About Us page
-createAboutUsPage();
+export default AboutUs;

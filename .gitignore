@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 .venv/
 .env
-=======
-.env
-.venv
->>>>>>> feature/login-form

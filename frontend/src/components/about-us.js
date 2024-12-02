@@ -24,7 +24,7 @@ const TeamMember = ({ name, role, imgSrc, linkedInUrl }) => {
 const AboutUs = () => {
   return (
     <div className="container-about-us">
-      <h1 className="about-us-h1">About Us</h1>
+      <h1>About Us</h1>
 
       {/* Mission Section */}
       <section className="mission">

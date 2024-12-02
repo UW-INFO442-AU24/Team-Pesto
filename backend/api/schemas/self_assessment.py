@@ -1,34 +1,22 @@
 from pydantic import BaseModel
 from typing import List
+from datetime import datetime
 
-# question model
-class Question(BaseModel):
-    id: int
-    text: str
-
-    class Config:
-        orm_mode = True
-
-# answer model
-class AnswerBase(BaseModel):
-    question_id: int
-    answer: int
-
-class Answer(AnswerBase):
-    id: int
+class StoreResponse(BaseModel):
+    score: int
 
     class Config:
         orm_mode = True
 
-# response model
-class ResponseBase(BaseModel):
-    answers: List[AnswerBase]
-
-class ResponseCreate(ResponseBase):
-    pass
-
-class Response(ResponseBase):
+class Response(BaseModel):
     id: int
+    user_id: int
+    score: int
+    timestamp: datetime
 
     class Config:
         orm_mode = True
+
+class SubmitResponse(BaseModel):
+    score: int
+    response: Response

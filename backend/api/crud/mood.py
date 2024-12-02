@@ -3,7 +3,7 @@ from db.models.mood import Mood
 from api.schemas.mood import MoodCreate
 
 def create_user_mood(db: Session, mood: MoodCreate, user_id: int):
-    db_mood = Mood(**mood.dict(), user_id=user_id)
+    db_mood = Mood(**mood.model_dump(), user_id=user_id)
     db.add(db_mood)
     db.commit()
     db.refresh(db_mood)

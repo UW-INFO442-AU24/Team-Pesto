@@ -12,7 +12,6 @@ const Login = () => {
       alignItems: "center",
       height: "100vh",
       margin: 0,
-      backgroundColor: "#FAF8FA",
     },
     loginForm: {
       width: "50%",

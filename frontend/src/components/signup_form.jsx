@@ -33,7 +33,7 @@ const SignupForm = () => {
         password: formData.password,
       });
       console.log("User created:", response.data);
-      navigate("/login_form");  // Redirect to homepage
+      navigate("/login_form");  // Redirect to login
     } catch (error) {
       setErrorMessage("Error creating user");
       console.error(error);

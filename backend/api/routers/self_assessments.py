@@ -34,5 +34,4 @@ def get_today_responses(db: Session = Depends(get_db), current_user: User = Depe
 
 @router.get("/user-responses/", response_model=List[SubmitResponse])
 def get_user_responses(db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
-    responses = db.query(ResponseModel).filter(ResponseModel.user_id == current_user.id).all()
-    return [{"score": response.score, "response": response} for response in responses]
+    responses = db.query(ResponseModel).filter(ResponseModel.user_id)

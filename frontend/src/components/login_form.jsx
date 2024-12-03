@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Login = () => {
+const Login = ({ setIsAuthenticated }) => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -25,7 +25,8 @@ const Login = () => {
       });
       console.log("Login successful:", response.data);
       localStorage.setItem('access_token', response.data.access_token);  // Store the token
-      navigate("/homepage");  // Redirect to homepage
+      setIsAuthenticated(true);  // Update authentication state
+      navigate("/home");  // Redirect to homepage
     } catch (error) {
       setErrorMessage("Incorrect username or password");
       console.error(error);

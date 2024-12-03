@@ -139,8 +139,8 @@ We also understand that there are some resources that provide similar services, 
     
 2.  Create and activate a virtual environment
     ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    python -m venv .venv
+    source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
     ```
     
 4.  Install postgresql

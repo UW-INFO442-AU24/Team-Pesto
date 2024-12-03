@@ -97,7 +97,7 @@ We also understand that there are some resources that provide similar services, 
 -   Python 3.12+
 -   Node.js 20+
 -   npm 10+
--   Azure account (for Cosmos DB or whichever db we use)
+-   Azure account for PostgreSQL - Flexible Server?
 
 ### Installation
 

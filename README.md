@@ -97,7 +97,6 @@ We also understand that there are some resources that provide similar services, 
 -   Python 3.12+
 -   Node.js 20+
 -   npm 10+
--   Azure account for PostgreSQL - Flexible Server?
 
 ### Installation
 
@@ -161,7 +160,7 @@ We also understand that there are some resources that provide similar services, 
     pip install -r requirements.txt
     ```
     
-7.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL:
+7.  Set up environment variables - Create a .env file in the root directory and add the Azure Postgresql DB URL along with other env info:
     
     ```sh
     DATABASE_URL="teampesto-dev-westus-001.postgres.database.azure.com"

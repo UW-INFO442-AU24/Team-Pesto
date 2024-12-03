@@ -25,7 +25,76 @@ const EPDSQuiz = () => {
         { label: 'Hardly at all', value: 3 },
       ],
     },
-    // Add other questions in the same format...
+    {
+      id: 'q3',
+      text: 'I have blamed myself unnecessarily when things went wrong:',
+      options: [
+        { label: 'Yes, most of the time', value: 3 },
+        { label: 'Yes, some of the time', value: 2 },
+        { label: 'Not very often', value: 1 },
+        { label: 'No, never', value: 0 },
+      ],
+    },
+    {
+      id: 'q4',
+      text: 'I have been anxious or worried for no good reason:',
+      options: [
+        { label: 'No, not at all', value: 0 },
+        { label: 'Hardly ever', value: 1 },
+        { label: 'Yes, sometimes', value: 2 },
+        { label: 'Yes, very often', value: 3 },
+      ],
+    },
+    {
+      id: 'q5',
+      text: 'I have felt scared or panicky for no good reason:',
+      options: [
+        { label: 'Yes, quite a lot', value: 3 },
+        { label: 'Yes, sometimes', value: 2 },
+        { label: 'No, not much', value: 1 },
+        { label: 'No, not at all', value: 0 },
+      ],
+    },
+    {
+      id: 'q6',
+      text: 'Things have been getting to me:',
+      options: [
+        { label: 'Yes, most of the time I haven’t been able to cope at all', value: 3 },
+        { label: 'Yes, sometimes I haven’t been coping as well as usual', value: 2 },
+        { label: 'No, most of the time I have coped quite well', value: 1 },
+        { label: 'No, I have been coping as well as ever', value: 0 },
+      ],
+    },
+    {
+      id: 'q7',
+      text: 'I have been so unhappy that I have had difficulty sleeping:',
+      options: [
+        { label: 'Yes, most of the time', value: 3 },
+        { label: 'Yes, sometimes', value: 2 },
+        { label: 'No, not very often', value: 1 },
+        { label: 'No, not at all', value: 0 },
+      ],
+    },
+    {
+      id: 'q8',
+      text: 'I have felt sad or miserable:',
+      options: [
+        { label: 'Yes, most of the time', value: 3 },
+        { label: 'Yes, quite often', value: 2 },
+        { label: 'Not very often', value: 1 },
+        { label: 'No, not at all', value: 0 },
+      ],
+    },
+    {
+      id: 'q9',
+      text: 'I have been so unhappy that I have been crying:',
+      options: [
+        { label: 'Yes, most of the time', value: 3 },
+        { label: 'Yes, quite often', value: 2 },
+        { label: 'Only occasionally', value: 1 },
+        { label: 'No, never', value: 0 },
+      ],
+    },
     {
       id: 'q10',
       text: 'The thought of harming myself has occurred to me:',

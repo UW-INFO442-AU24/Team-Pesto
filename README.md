@@ -151,10 +151,9 @@ We also understand that there are some resources that provide similar services, 
     brew install postgresql
     ```
 
-    ```sh
-    Follow the instructions on the redis website linked below
-    ```
-    [Postgresql Windows Installation](https://www.postgresql.org/download/windows/)
+    #### On Windows:
+    
+    Follow the instructions on the redis website linked [here](https://www.postgresql.org/download/windows/)
     
 6.  Install backend dependencies
     
@@ -177,10 +176,7 @@ We also understand that there are some resources that provide similar services, 
     ```
 
     #### On Windows:
-    ```sh
-    Follow the instructions on the redis website linked below
-    ```
-    [Redis Windows Installation](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
+    Follow the instructions on the redis website linked [here](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
 
 9.  Run database migrations:
     

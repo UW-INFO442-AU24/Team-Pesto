@@ -29,14 +29,10 @@ def read_all_moods_for_user(limit: Optional[int] = 5, db: Session = Depends(get_
 
 @router.get("/moods/latest/", response_model=Mood)
 def read_latest_mood_for_day(day: date, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
-    try:
-        mood = crud_mood.get_latest_mood_for_day(db=db, user_id=current_user.id, day=day)
-        if not mood:
-            raise HTTPException(status_code=404, detail="No mood found for this day")
-        return mood
-    except Exception as e:
-        print(f"Error fetching latest mood for day {day}: {e}")
-        raise HTTPException(status_code=500, detail="Error fetching latest mood for the day")
+    mood = crud_mood.get_latest_mood_for_day(db=db, user_id=current_user.id, day=day)
+    if not mood:
+        return Mood(id=0, user_id=current_user.id, mood=0, timestamp=datetime.combine(day, datetime.min.time()))
+    return mood
     
 @router.get("/moods/latest_week/", response_model=List[Mood])
 def read_latest_moods_for_week(db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
@@ -50,3 +46,7 @@ def read_latest_moods_for_week(db: Session = Depends(get_db), current_user: User
         else:
             moods.append(Mood(id=0, user_id=current_user.id, mood=0, timestamp=datetime.combine(day, datetime.min.time())))
     return moods
+
+@router.get("/moods/range/", response_model=List[Mood])
+def read_moods_for_date_range(start: date, end: date, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
+    return crud_mood.get_moods_for_date_range(db=db, user_id=current_user.id, start_date=start, end_date=end)

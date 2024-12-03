@@ -153,9 +153,8 @@ const Homepage = () => {
       <MoodSection />
       <AchievementSection />
       <MindSection />
-      <WellnessHistory />
-
       <button className="submit-btn">Submit</button>
+      <WellnessHistory />
     </div>
   );
 };

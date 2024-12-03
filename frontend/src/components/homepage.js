@@ -1,4 +1,5 @@
 import axios from 'axios';
+import WellnessHistory from './wellness_history';
 import React, { useState, useEffect } from 'react';
 
 // Appointments Component
@@ -152,6 +153,7 @@ const Homepage = () => {
       <MoodSection />
       <AchievementSection />
       <MindSection />
+      <WellnessHistory />
 
       <button className="submit-btn">Submit</button>
     </div>

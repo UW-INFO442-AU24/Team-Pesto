@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List, Optional
+from datetime import date, datetime, timedelta
 
 from api.crud import mood as crud_mood
 from api.schemas.mood import Mood, MoodCreate
@@ -25,3 +26,27 @@ def read_mood(mood_id: int, db: Session = Depends(get_db), current_user: User = 
 @router.get("/moods/", response_model=List[Mood])
 def read_all_moods_for_user(limit: Optional[int] = 5, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
     return crud_mood.get_all_moods_by_user(db=db, user_id=current_user.id, limit=limit)
+
+@router.get("/moods/latest/", response_model=Mood)
+def read_latest_mood_for_day(day: date, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
+    try:
+        mood = crud_mood.get_latest_mood_for_day(db=db, user_id=current_user.id, day=day)
+        if not mood:
+            raise HTTPException(status_code=404, detail="No mood found for this day")
+        return mood
+    except Exception as e:
+        print(f"Error fetching latest mood for day {day}: {e}")
+        raise HTTPException(status_code=500, detail="Error fetching latest mood for the day")
+    
+@router.get("/moods/latest_week/", response_model=List[Mood])
+def read_latest_moods_for_week(db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
+    today = datetime.today().date()
+    week_days = [today - timedelta(days=i) for i in range(7)]
+    moods = []
+    for day in week_days:
+        mood = crud_mood.get_latest_mood_for_day(db=db, user_id=current_user.id, day=day)
+        if mood:
+            moods.append(mood)
+        else:
+            moods.append(Mood(id=0, user_id=current_user.id, mood=0, timestamp=datetime.combine(day, datetime.min.time())))
+    return moods

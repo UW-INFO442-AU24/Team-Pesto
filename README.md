@@ -151,7 +151,7 @@ We also understand that there are some resources that provide similar services, 
     pip install -r requirements.txt
     ```
     
-4.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL:
+4.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL along with other info (will be given):
     
     ```sh
     DATABASE_URL="teampesto-dev-westus-001.postgres.database.azure.com"

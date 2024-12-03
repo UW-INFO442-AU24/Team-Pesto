@@ -145,6 +145,11 @@ const Dashboard = () => {
     });
   }, []);
 
+  const handleSubmit = () => {
+    // Refresh the page
+    window.location.reload();
+  };
+
   return (
     <div className="container">
       <h1>Welcome, {userName}</h1>
@@ -153,7 +158,7 @@ const Dashboard = () => {
       <MoodSection />
       <AchievementSection />
       <MindSection />
-      <button className="submit-btn">Submit</button>
+      <button className="submit-btn" onClick={handleSubmit}>Submit</button>
       <WellnessHistory />
     </div>
   );

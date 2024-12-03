@@ -54,7 +54,7 @@ const AboutUs = () => {
         {/* Team Member 2 */}
         <TeamMember 
           name="Joey Kang"
-          role="Backend Developer"
+          role="Fullstack Developer"
           imgSrc={joeyImage}
           linkedInUrl="https://www.linkedin.com/in/joey--kang/"
         />

@@ -2,13 +2,15 @@ from logging.config import fileConfig
 import os
 import urllib.parse
 from dotenv import load_dotenv
+import importlib
+import pkgutil
 
 from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from alembic import context
 
-from db.db_setup import Base
+from db.db_setup import Base 
 
 # Load environment variables from .env file
 load_dotenv()
@@ -19,6 +21,11 @@ config = context.config
 # Interpret the config file for Python logging. This line sets up loggers basically.
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
+
+# Dynamically import all models in the db/models folder
+package_dir = os.path.join(os.path.dirname(__file__), 'db', 'models')
+for (module_loader, name, ispkg) in pkgutil.iter_modules([package_dir]):
+    importlib.import_module(f'db.models.{name}')
 
 # add your model's MetaData object here
 target_metadata = Base.metadata
@@ -56,7 +63,6 @@ def run_migrations_offline() -> None:
     with context.begin_transaction():
         context.run_migrations()
 
-
 def run_migrations_online() -> None:
     """Run migrations in 'online' mode.
 
@@ -77,7 +83,6 @@ def run_migrations_online() -> None:
 
         with context.begin_transaction():
             context.run_migrations()
-
 
 if context.is_offline_mode():
     run_migrations_offline()

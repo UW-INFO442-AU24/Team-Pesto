@@ -1,4 +1,5 @@
 import axios from 'axios';
+import WellnessHistory from './wellness_history';
 import React, { useState, useEffect } from 'react';
 
 // Appointments Component
@@ -16,34 +17,83 @@ const Appointments = () => {
 // Mood Section Component
 const MoodSection = () => {
   const [moods, setMoods] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    axios.get('http://localhost:8000/moods/')
-      .then(response => {
-        setMoods(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the moods!', error);
-      });
+    const token = localStorage.getItem('access_token'); // Retrieve the token from local storage
+    if (!token) {
+      setErrorMessage("Unauthorized: No token found");
+      return;
+    }
+
+    axios.get('http://localhost:8000/moods/?limit=5', { // Add limit query parameter
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      setMoods(response.data);
+    })
+    .catch(error => {
+      if (error.response && error.response.status === 401) {
+        setErrorMessage("Unauthorized: Invalid token");
+      } else {
+        setErrorMessage("Error fetching moods");
+      }
+      console.error('There was an error fetching the moods!', error);
+    });
   }, []);
+
+  const handleMoodClick = (moodValue) => {
+    const token = localStorage.getItem('access_token');
+    if (!token) {
+      setErrorMessage("Unauthorized: No token found");
+      return;
+    }
+
+    axios.post('http://localhost:8000/moods/', { mood: moodValue }, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      setMoods([response.data, ...moods].slice(0, 5)); // Add new mood and limit to 5
+    })
+    .catch(error => {
+      if (error.response && error.response.status === 401) {
+        setErrorMessage("Unauthorized: Invalid token");
+      } else {
+        setErrorMessage("Error adding mood");
+      }
+      console.error('There was an error adding the mood!', error);
+    });
+  };
 
   return (
     <div className="mood-section">
       <h2>How are you feeling today?</h2>
       <p>Rate your mood from 1 (very low) to 5 (very positive) for your own tracking—no right or wrong answers.</p>
       <div className="mood-options">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-        <div>5</div>
+        {[1, 2, 3, 4, 5].map(value => (
+          <div
+            key={value}
+            className="mood-option"
+            onClick={() => handleMoodClick(value)}
+          >
+            {value}
+          </div>
+        ))}
       </div>
       <h3>Previous Moods</h3>
       <div className="previous-moods">
         {moods.map(mood => (
-          <div key={mood.id}>Mood: {mood.rating}</div>
+          <div key={mood.id} className="mood-item">
+            Mood: {mood.mood} <br />
+            Date: {new Date(mood.timestamp).toLocaleDateString()}
+          </div>
         ))}
       </div>
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 };
@@ -72,19 +122,42 @@ const MindSection = () => {
 };
 
 // Main Dashboard Component
-const homepage = () => {
+const Homepage = () => {
+  const [userName, setUserName] = useState('Sarah'); // Default name
+
+  useEffect(() => {
+    const token = localStorage.getItem('access_token'); // Retrieve the token from local storage
+    if (!token) {
+      console.error("Unauthorized: No token found");
+      return;
+    }
+
+    axios.get('http://localhost:8000/users/me/', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    .then(response => {
+      setUserName(response.data.full_name); // Assuming the response contains a 'fullName' field
+    })
+    .catch(error => {
+      console.error('There was an error fetching the user details!', error);
+    });
+  }, []);
+
   return (
     <div className="container">
-      <h1>Welcome, Sarah</h1>
+      <h1>Welcome, {userName}</h1>
 
       <Appointments />
       <MoodSection />
       <AchievementSection />
       <MindSection />
+      <WellnessHistory />
 
       <button className="submit-btn">Submit</button>
     </div>
   );
 };
 
-export default homepage;
+export default Homepage;

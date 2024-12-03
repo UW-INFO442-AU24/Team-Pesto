@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a2b0ae15.css",
+    "main.js": "/static/js/main.b78097f7.js",
+    "static/media/mira_picture.jpeg": "/static/media/mira_picture.26c7e27de03706f7d965.jpeg",
+    "static/media/mynah_picture.jpeg": "/static/media/mynah_picture.bf77941eaf5680938501.jpeg",
+    "static/media/safa_picture.jpeg": "/static/media/safa_picture.ad6ea3e997974666e6ad.jpeg",
+    "static/media/hera_logo.png": "/static/media/hera_logo.faa0a283509822569a9b.png",
+    "static/media/katie_picture.jpeg": "/static/media/katie_picture.489abdf4846438d1f4d4.jpeg",
+    "static/media/joey_picture.jpeg": "/static/media/joey_picture.566ce38b8a9656dd12d0.jpeg",
+    "index.html": "/index.html",
+    "main.a2b0ae15.css.map": "/static/css/main.a2b0ae15.css.map",
+    "main.b78097f7.js.map": "/static/js/main.b78097f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a2b0ae15.css",
+    "static/js/main.b78097f7.js"
+  ]
+}

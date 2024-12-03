@@ -19,7 +19,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyClNd_YMV80Wxh25_d-wOUPi_uPAtPNvOs",
   authDomain: "info-442---team-pesto.firebaseapp.com",
   projectId: "info-442---team-pesto",
-  storageBucket: "info-442---team-pesto.appspot.com",
+  storageBucket: "info-442---team-pesto.firebasestorage.app",
   messagingSenderId: "1051959408243",
   appId: "1:1051959408243:web:a85f687aba21b08f7d9c06"
 };

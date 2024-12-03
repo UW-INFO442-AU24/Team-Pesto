@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Header from "../src/components/header.js";
 import Home from "../src/components/resources.js";
 import AboutUs from "../src/components/about-us.js";
@@ -46,6 +46,7 @@ const App = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/login_form" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/signup_form" element={<Signup />} />
+          <Route path="/" element={<Navigate to="/home" />} />
         </Routes>
       </Router>
     </div>

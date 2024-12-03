@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
-from typing import List
+from typing import List, Optional
 
 from api.crud import mood as crud_mood
 from api.schemas.mood import Mood, MoodCreate
@@ -23,5 +23,5 @@ def read_mood(mood_id: int, db: Session = Depends(get_db), current_user: User = 
     return db_mood
 
 @router.get("/moods/", response_model=List[Mood])
-def read_all_moods_for_user(db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
-    return crud_mood.get_all_moods_by_user(db=db, user_id=current_user.id)
+def read_all_moods_for_user(limit: Optional[int] = 5, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
+    return crud_mood.get_all_moods_by_user(db=db, user_id=current_user.id, limit=limit)

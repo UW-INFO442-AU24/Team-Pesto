@@ -293,6 +293,23 @@ nav {
   height: auto;
   border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+  .nav-bar-body {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack links */
+    gap: 10px;
+  }
+
+  .logo {
+    max-width: 100px; /* Resize the logo */
+  }
+}
+
   /* End of Nav Bar CSS*/
   /*START OF SIGNUP FORM CSS -----------------------------------*/
 .signup_form {

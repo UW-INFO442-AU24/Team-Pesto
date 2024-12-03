@@ -28,3 +28,6 @@ def get_latest_mood_for_day(db: Session, user_id: int, day: date):
         Mood.timestamp >= start_of_day,
         Mood.timestamp < end_of_day
     ).order_by(desc(Mood.timestamp)).first()
+
+def get_moods_for_date_range(db: Session, user_id: int, start_date: date, end_date: date):
+    return db.query(Mood).filter(Mood.user_id == user_id, Mood.timestamp >= start_date, Mood.timestamp <= end_date).all()

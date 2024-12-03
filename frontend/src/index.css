@@ -473,6 +473,22 @@ body {
   background-color: #734b64;
 }
 
+.previous-moods {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.mood-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+}
+
 textarea {
   width: 100%;
   height: 60px;

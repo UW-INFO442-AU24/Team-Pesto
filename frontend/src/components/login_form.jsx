@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Login = () => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -12,13 +13,19 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = new FormData();
+    data.append("username", formData.username);
+    data.append("password", formData.password);
+  
     try {
-      const response = await axios.post("http://localhost:8000/token", {
-        username: formData.username,
-        password: formData.password,
+      const response = await axios.post("http://localhost:8000/token", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       });
       console.log("Login successful:", response.data);
-      // Store the token in localStorage or state
+      localStorage.setItem('access_token', response.data.access_token);  // Store the token
+      navigate("/homepage");  // Redirect to homepage
     } catch (error) {
       setErrorMessage("Incorrect username or password");
       console.error(error);

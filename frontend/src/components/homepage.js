@@ -122,7 +122,7 @@ const MindSection = () => {
 };
 
 // Main Dashboard Component
-const Homepage = () => {
+const Dashboard = () => {
   const [userName, setUserName] = useState('Sarah'); // Default name
 
   useEffect(() => {
@@ -159,4 +159,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Dashboard;

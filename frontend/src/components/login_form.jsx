@@ -26,7 +26,7 @@ const Login = ({ setIsAuthenticated }) => {
       console.log("Login successful:", response.data);
       localStorage.setItem('access_token', response.data.access_token);  // Store the token
       setIsAuthenticated(true);  // Update authentication state
-      navigate("/homepage");  // Redirect to homepage
+      navigate("/home");  // Redirect to homepage
     } catch (error) {
       setErrorMessage("Incorrect username or password");
       console.error(error);

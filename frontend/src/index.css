@@ -672,6 +672,15 @@ textarea::placeholder {
   margin-top: 20px;
 }
 
+.disabled-link {
+  color: grey;
+  cursor: not-allowed;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+}
+
 /*END OF HOMEPAGE*/
 /*START OF NAV BAR*/
 /* index.css */

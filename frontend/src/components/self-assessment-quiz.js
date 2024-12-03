@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import '../index.css';
 
 const EPDSQuiz = () => {
   const [formData, setFormData] = useState({});
@@ -111,22 +113,36 @@ const EPDSQuiz = () => {
     setFormData((prev) => ({ ...prev, [questionId]: parseInt(value) }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const score = Object.values(formData).reduce((sum, val) => sum + val, 0);
 
-    if (score > 10) {
-      setResult({
-        message:
-          'Your score suggests you may be experiencing symptoms of postpartum depression. Please contact a healthcare professional.',
-        color: 'red',
-      });
+    let message = '';
+    let color = '';
+
+    if (score >= 13) {
+      message = 'Your score suggests you may be experiencing symptoms of postpartum depression. Please contact a healthcare professional. A total score of 13 or more is considered a flag for the need for follow up of possible depressive symptoms.';
+      color = 'red';
+    } else if (score > 10) {
+      message = 'Your score suggests you may be experiencing symptoms of postpartum depression. Please contact a healthcare professional.';
+      color = 'red';
     } else {
-      setResult({
-        message:
-          'Your score is within the normal range. If you have concerns, consult a healthcare provider.',
-        color: 'green',
+      message = 'Your score is within the normal range. If you have concerns, consult a healthcare provider.';
+      color = 'green';
+    }
+
+    setResult({ message, color });
+
+    try {
+      const token = localStorage.getItem('access_token');
+      await axios.post('http://localhost:8000/submit/', { score }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       });
+      console.log('Score submitted successfully');
+    } catch (error) {
+      console.error('Error submitting score:', error);
     }
   };
 
@@ -149,7 +165,7 @@ const EPDSQuiz = () => {
             <p>{question.text}</p>
             <div className="quiz-options">
               {question.options.map((option, index) => (
-                <label key={index}>
+                <label key={index} className="quiz-option">
                   <input
                     type="radio"
                     name={question.id}
@@ -165,10 +181,10 @@ const EPDSQuiz = () => {
             </div>
           </div>
         ))}
-        <button type="submit">Submit</button>
+        <button type="submit" className="submit-button">Submit</button>
       </form>
       {result && (
-        <p style={{ color: result.color, marginTop: '20px' }}>{result.message}</p>
+        <p className="result-message" style={{ color: result.color, marginTop: '20px' }}>{result.message}</p>
       )}
     </div>
   );

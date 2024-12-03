@@ -1,7 +1,7 @@
 import React from 'react'
 import "../index.css"
 
-const resources = () => {
+const Home = () => {
   return (
     <div>
 
@@ -128,4 +128,4 @@ const resources = () => {
   )
 }
 
-export default resources
+export default Home

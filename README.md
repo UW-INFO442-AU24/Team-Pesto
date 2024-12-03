@@ -97,7 +97,6 @@ We also understand that there are some resources that provide similar services, 
 -   Python 3.12+
 -   Node.js 20+
 -   npm 10+
--   Azure account (for Cosmos DB or whichever db we use)
 
 ### Installation
 
@@ -139,25 +138,35 @@ We also understand that there are some resources that provide similar services, 
     ```
     
 2.  Create and activate a virtual environment
-    
     ```sh
-    python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    python -m venv .venv
+    source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
     ```
     
-3.  Install backend dependencies
+4.  Install postgresql
+   
+    #### On macOS:
+    ```sh
+    brew install postgresql
+    ```
+
+    #### On Windows:
+    
+    Follow the instructions on the redis website linked [here](https://www.postgresql.org/download/windows/)
+    
+6.  Install backend dependencies
     
     ```sh
     pip install -r requirements.txt
     ```
-    
-4.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL along with other info (will be given):
-    
+
+7.  Set up environment variables - Create a .env file in the root directory and add the Azure Postgresql DB URL along with other env info:
+
     ```sh
     DATABASE_URL="teampesto-dev-westus-001.postgres.database.azure.com"
     ```
 
-5. Install and start Redis:
+8. Install and start Redis:
 
     #### On macOS:
     ```sh
@@ -166,18 +175,15 @@ We also understand that there are some resources that provide similar services, 
     ```
 
     #### On Windows:
-    ```sh
-    Follow the instructions on the redis website linked below
-    ```
-    [Redis Windows Installation](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
+    Follow the instructions on the redis website linked [here](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
 
-6.  Run database migrations:
+9.  Run database migrations:
     
     ```py
     python -c "from ..db_setup import Base, engine; Base.metadata.create_all(bind=engine)"
     ```
 
-7.  Start the FastAPI server:
+10.  Start the FastAPI server:
     
     ```sh
     uvicorn app.main:app --reload
@@ -191,15 +197,14 @@ We also understand that there are some resources that provide similar services, 
 ## Roadmap
 
 -   [x] Login/Sign-up
--   [x] Mood tracking
--   [ ] Data input through self-assessments, sleep tracking, medications, etc.
--   [ ] Self-assessments based on professional quizzes online
--   [ ] Page for mental health resources
--   [ ] Page for community/partner support resources
--   [ ] Privacy and security - data protection
--   [ ] Education about postpartum depression
--   [ ] Resource to find a therapist/online therapy support
--   [ ] Data visualization tools (e.g., graphs, charts)
+-   [x] Data input through self-assessments, mood tracking, etc.
+-   [x] Self-assessments based on professional quizzes online
+-   [x] Page for mental health resources
+-   [x] Page for community/partner support resources
+-   [x] Privacy and security - data protection
+-   [x] Education about postpartum depression
+-   [x] Resource to find a therapist/online therapy support
+-   [x] Data visualization tools (e.g., graphs, charts)
 
 <!-- CONTACT -->
 ## Contact

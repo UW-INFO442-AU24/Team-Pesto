@@ -191,15 +191,14 @@ We also understand that there are some resources that provide similar services, 
 ## Roadmap
 
 -   [x] Login/Sign-up
--   [x] Mood tracking
--   [ ] Data input through self-assessments, sleep tracking, medications, etc.
--   [ ] Self-assessments based on professional quizzes online
--   [ ] Page for mental health resources
--   [ ] Page for community/partner support resources
--   [ ] Privacy and security - data protection
--   [ ] Education about postpartum depression
--   [ ] Resource to find a therapist/online therapy support
--   [ ] Data visualization tools (e.g., graphs, charts)
+-   [x] Data input through self-assessments, mood tracking, etc.
+-   [x] Self-assessments based on professional quizzes online
+-   [x] Page for mental health resources
+-   [x] Page for community/partner support resources
+-   [x] Privacy and security - data protection
+-   [x] Education about postpartum depression
+-   [x] Resource to find a therapist/online therapy support
+-   [x] Data visualization tools (e.g., graphs, charts)
 
 <!-- CONTACT -->
 ## Contact

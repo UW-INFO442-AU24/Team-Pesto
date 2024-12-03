@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 // Appointments Component
 const Appointments = () => {
@@ -14,6 +15,18 @@ const Appointments = () => {
 
 // Mood Section Component
 const MoodSection = () => {
+  const [moods, setMoods] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8000/moods/')
+      .then(response => {
+        setMoods(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the moods!', error);
+      });
+  }, []);
+
   return (
     <div className="mood-section">
       <h2>How are you feeling today?</h2>
@@ -24,6 +37,12 @@ const MoodSection = () => {
         <div>3</div>
         <div>4</div>
         <div>5</div>
+      </div>
+      <h3>Previous Moods</h3>
+      <div className="previous-moods">
+        {moods.map(mood => (
+          <div key={mood.id}>Mood: {mood.rating}</div>
+        ))}
       </div>
     </div>
   );

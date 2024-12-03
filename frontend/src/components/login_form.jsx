@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
+  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8000/token", {
+        username: formData.username,
+        password: formData.password,
+      });
+      console.log("Login successful:", response.data);
+      // Store the token in localStorage or state
+    } catch (error) {
+      setErrorMessage("Incorrect username or password");
+      console.error(error);
+    }
+  };
+
   const styles = {
     global: {
       fontFamily: "'Open Sans', 'Helvetica Neue', sans-serif",
@@ -62,28 +85,34 @@ const Login = () => {
       <div style={styles.loginBody}>
         <div style={styles.loginForm}>
           <h1 style={styles.loginFormHeading}>Login</h1>
-          <form id="loginForm">
+          <form id="loginForm" onSubmit={handleSubmit}>
             <input
               type="text"
+              name="username"
               placeholder="Username"
               style={styles.input}
+              value={formData.username}
+              onChange={handleChange}
               required
             />
             <input
               type="password"
+              name="password"
               placeholder="Password"
               style={styles.input}
+              value={formData.password}
+              onChange={handleChange}
               required
             />
             <button type="submit" style={styles.button}>
               Login
             </button>
           </form>
-          <p id="error-message" style={styles.errorMessage}></p>
+          <p id="error-message" style={styles.errorMessage}>{errorMessage}</p>
           <div style={styles.signupLink}>
-          <Link to="/signup_form" style={styles.signupButton}>
-            Don't have an account? Sign up!
-          </Link>
+            <Link to="/signup_form" style={styles.signupButton}>
+              Don't have an account? Sign up!
+            </Link>
           </div>
         </div>
       </div>

@@ -139,25 +139,36 @@ We also understand that there are some resources that provide similar services, 
     ```
     
 2.  Create and activate a virtual environment
-    
     ```sh
     python -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
     
-3.  Install backend dependencies
+4.  Install postgresql
+   
+    #### On macOS:
+    ```sh
+    brew install postgresql
+    ```
+
+    ```sh
+    Follow the instructions on the redis website linked below
+    ```
+    [Postgresql Windows Installation](https://www.postgresql.org/download/windows/)
+    
+6.  Install backend dependencies
     
     ```sh
     pip install -r requirements.txt
     ```
     
-4.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL:
+7.  Set up environment variables - Create a .env file in the root directory and add the Azure Cosmos DB URL:
     
     ```sh
     DATABASE_URL="teampesto-dev-westus-001.postgres.database.azure.com"
     ```
 
-5. Install and start Redis:
+8. Install and start Redis:
 
     #### On macOS:
     ```sh
@@ -171,13 +182,13 @@ We also understand that there are some resources that provide similar services, 
     ```
     [Redis Windows Installation](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/)
 
-6.  Run database migrations:
+9.  Run database migrations:
     
     ```py
     python -c "from ..db_setup import Base, engine; Base.metadata.create_all(bind=engine)"
     ```
 
-7.  Start the FastAPI server:
+10.  Start the FastAPI server:
     
     ```sh
     uvicorn app.main:app --reload

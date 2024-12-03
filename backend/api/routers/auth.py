@@ -1,14 +1,19 @@
+import os
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 from datetime import timedelta
 from api.crud import auth as crud_user
 from api.schemas.token import Token
+from jose import JWTError, jwt
 from db.db_setup import get_db
 from utils.utils import create_access_token, blacklist_token, oauth2_scheme
 from api.crud.auth import authenticate_user
 
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
+
 
 router = APIRouter()
 
@@ -37,3 +42,11 @@ async def logout(token: str = Depends(oauth2_scheme)):
     blacklist_token(token, expires_in=ACCESS_TOKEN_EXPIRE_MINUTES * 60)
     print(f"Blacklisted token: {token}")
     return {"message": "Successfully logged out"}
+
+@router.get("/validate_token")
+async def validate_token(token: str = Depends(oauth2_scheme)):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return {"status": "valid"}
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid token")

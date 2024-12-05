@@ -74,6 +74,9 @@ We also understand that there are some resources that provide similar services, 
 
 <p align=“right”>(<a href=“#readme-top”>back to top</a>)</p>
 
+### Testing Protocol
+([Google Docs link](https://docs.google.com/document/d/1LuXIaYh0Dhm2Kribh1irXMyRY1zQmrn7Pf-qLse8ft8/edit?usp=sharing)) 
+
 ### Built With
 
 * [![React][React.js]][React-url]

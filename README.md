@@ -233,7 +233,7 @@ We also understand that there are some resources that provide similar services, 
 [Python-url]: https://www.python.org/
 [FastAPI]: https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi
 [FastAPI-url]: https://fastapi.tiangolo.com/
-[Microsoft-Azure]: https://custom-icon-badges.demolab.com/badge/Microsoft%20Azure-0089D6?logo=msazure&logoColor=white](https://custom-icon-badges.demolab.com/badge/Microsoft%20Azure-0089D6?style=for-the-badge&logo=msazure&logoColor=white
+[Microsoft-Azure]: https://custom-icon-badges.demolab.com/badge/Microsoft%20Azure-0089D6?style=for-the-badge&logo=msazure&logoColor=white
 [Microsoft-Azure-url]: https://azure.microsoft.com/
 [Firebase]: https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black
 [Firebase-url]: https://firebase.google.com/
